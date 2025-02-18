@@ -7,15 +7,16 @@ import Productcard from './components/productcard.jsx';
 
 function App() {
   const cards = Array.from({ length: 10 });
-  const gridStyle = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(4, 1fr)',
-    gap: '16px',
-    padding: '16px',
+  const containerStyle = {
+    display: 'flex',
+    flexWrap: 'wrap', // Ensures cards wrap into rows
+    gap: '20px', // Spacing between each card
+    padding: '20px', // Padding around the container
+    justifyContent: 'space-between', // Ensures even distribution of cards in rows
   };
 
   return (
-    <div style={gridStyle}>
+    <div style={containerStyle}>
       {cards.map((_, index) => (
         <Productcard key={index} />
       ))}
